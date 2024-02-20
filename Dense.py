@@ -25,7 +25,7 @@ validation_data_directory = 'ValDir'
 
 batch_size = 32
 epochs = 25
-input_shape = (512, 512, 3) #have to adjust
+input_shape = (512, 512, 3) #have to adjust according to the dataset size of chakshu images
 num_classes = 2  # for binary classification
 
 # Data augmentation and preprocessing
@@ -71,6 +71,7 @@ model_checkpoint = tf.keras.callbacks.ModelCheckpoint(
     checkpoint_path, monitor='val_accuracy', save_best_only=True
 )
 
+#Prints the results; gets updated after each epoch
 csv_file = 'training_logs.csv'
 
 with open(csv_file, mode='w', newline='') as log_file:
